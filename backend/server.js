@@ -24,7 +24,7 @@ const PRODUCTS = [
     handle: 'classic-pullover',
     description: 'Comfortable retro-styled pullover with zur-legende branding',
     price: 4999,
-    images: [{ url: '/images/pullover1.jpg' }],
+    images: [{ url: '/images/pullover1.svg' }],
   },
   {
     id: 'prod_2',
@@ -32,7 +32,7 @@ const PRODUCTS = [
     handle: 'neon-sweatshirt',
     description: 'Vibrant synthwave-inspired sweatshirt with glitch design',
     price: 5499,
-    images: [{ url: '/images/sweatshirt1.jpg' }],
+    images: [{ url: '/images/sweatshirt1.svg' }],
   },
   {
     id: 'prod_3',
@@ -40,7 +40,7 @@ const PRODUCTS = [
     handle: 'retro-hoodie',
     description: 'Vintage-inspired hoodie with 80s aesthetic',
     price: 6999,
-    images: [{ url: '/images/hoodie1.jpg' }],
+    images: [{ url: '/images/hoodie1.svg' }],
   },
   {
     id: 'prod_4',
@@ -48,7 +48,7 @@ const PRODUCTS = [
     handle: 'dark-crewneck',
     description: 'Minimalist dark crewneck perfect for the synthwave vibe',
     price: 4499,
-    images: [{ url: '/images/crewneck1.jpg' }],
+    images: [{ url: '/images/crewneck1.svg' }],
   },
   {
     id: 'prod_5',
@@ -56,7 +56,7 @@ const PRODUCTS = [
     handle: 'neon-tee',
     description: 'Bold neon pink oversized t-shirt',
     price: 2999,
-    images: [{ url: '/images/tee1.jpg' }],
+    images: [{ url: '/images/tee1.svg' }],
   },
 ];
 

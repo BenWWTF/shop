@@ -1,0 +1,98 @@
+<svg width="400" height="500" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e27;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1f3a;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow3">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" fill="url(#bgGrad3)"/>
+
+  <!-- Hoodie Body -->
+  <path d="M 140 140 L 90 200 L 90 320 Q 90 360 140 370 L 260 370 Q 310 360 310 320 L 310 200 L 260 140 Z"
+        fill="#0d1a2a" stroke="#39FF14" stroke-width="2"/>
+
+  <!-- Hoodie Sleeves Left -->
+  <ellipse cx="70" cy="220" rx="45" ry="95" fill="#0d1a2a" stroke="#39FF14" stroke-width="2" transform="rotate(-25 70 220)"/>
+
+  <!-- Hoodie Sleeves Right -->
+  <ellipse cx="330" cy="220" rx="45" ry="95" fill="#0d1a2a" stroke="#39FF14" stroke-width="2" transform="rotate(25 330 220)"/>
+
+  <!-- Large Hood -->
+  <ellipse cx="200" cy="100" rx="65" ry="60" fill="#0d1a2a" stroke="#39FF14" stroke-width="2.5"/>
+
+  <!-- Hood Interior Shading -->
+  <ellipse cx="200" cy="110" rx="50" ry="45" fill="#000a15" opacity="0.6" stroke="none"/>
+
+  <!-- Hood Drawstring Left -->
+  <path d="M 160 130 Q 150 150 140 200" fill="none" stroke="#00FFFF" stroke-width="2.5" filter="url(#glow3)"/>
+
+  <!-- Hood Drawstring Right -->
+  <path d="M 240 130 Q 250 150 260 200" fill="none" stroke="#00FFFF" stroke-width="2.5" filter="url(#glow3)"/>
+
+  <!-- Drawstring Caps -->
+  <circle cx="140" cy="200" r="4" fill="#00FFFF" filter="url(#glow3)"/>
+  <circle cx="260" cy="200" r="4" fill="#00FFFF" filter="url(#glow3)"/>
+
+  <!-- Front Zipper -->
+  <line x1="200" y1="160" x2="200" y2="340" stroke="#39FF14" stroke-width="2.5" filter="url(#glow3)"/>
+
+  <!-- Zipper Teeth -->
+  <line x1="195" y1="170" x2="205" y2="170" stroke="#39FF14" stroke-width="1"/>
+  <line x1="195" y1="190" x2="205" y2="190" stroke="#39FF14" stroke-width="1"/>
+  <line x1="195" y1="210" x2="205" y2="210" stroke="#39FF14" stroke-width="1"/>
+  <line x1="195" y1="230" x2="205" y2="230" stroke="#39FF14" stroke-width="1"/>
+  <line x1="195" y1="250" x2="205" y2="250" stroke="#39FF14" stroke-width="1"/>
+  <line x1="195" y1="270" x2="205" y2="270" stroke="#39FF14" stroke-width="1"/>
+  <line x1="195" y1="290" x2="205" y2="290" stroke="#39FF14" stroke-width="1"/>
+  <line x1="195" y1="310" x2="205" y2="310" stroke="#39FF14" stroke-width="1"/>
+
+  <!-- Chest Graphics -->
+  <rect x="160" y="220" width="80" height="70" fill="none" stroke="#FF00FF" stroke-width="2" rx="5" filter="url(#glow3)"/>
+  <text x="200" y="250" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle" fill="#FF00FF" filter="url(#glow3)">RETRO</text>
+  <text x="200" y="270" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle" fill="#FF00FF" filter="url(#glow3)">TECH</text>
+
+  <!-- Sleeve Cuffs Left -->
+  <circle cx="50" cy="310" r="18" fill="none" stroke="#39FF14" stroke-width="2" opacity="0.8"/>
+  <line x1="45" y1="310" x2="55" y2="310" stroke="#39FF14" stroke-width="1" opacity="0.6"/>
+
+  <!-- Sleeve Cuffs Right -->
+  <circle cx="350" cy="310" r="18" fill="none" stroke="#39FF14" stroke-width="2" opacity="0.8"/>
+  <line x1="345" y1="310" x2="355" y2="310" stroke="#39FF14" stroke-width="1" opacity="0.6"/>
+
+  <!-- Kangaroo Pocket -->
+  <rect x="155" y="290" width="90" height="60" fill="none" stroke="#39FF14" stroke-width="2" rx="8"/>
+
+  <!-- Pocket Details -->
+  <circle cx="200" cy="315" r="8" fill="none" stroke="#00FFFF" stroke-width="1" opacity="0.6"/>
+  <line x1="195" y1="315" x2="205" y2="315" stroke="#00FFFF" stroke-width="0.5" opacity="0.6"/>
+  <line x1="200" y1="310" x2="200" y2="320" stroke="#00FFFF" stroke-width="0.5" opacity="0.6"/>
+
+  <!-- Bottom Hem -->
+  <line x1="140" y1="365" x2="135" y2="395" stroke="#39FF14" stroke-width="1" opacity="0.6"/>
+  <line x1="170" y1="368" x2="165" y2="395" stroke="#39FF14" stroke-width="1" opacity="0.6"/>
+  <line x1="230" y1="368" x2="235" y2="395" stroke="#39FF14" stroke-width="1" opacity="0.6"/>
+  <line x1="260" y1="365" x2="265" y2="395" stroke="#39FF14" stroke-width="1" opacity="0.6"/>
+
+  <!-- Accent Stripe on Sleeves Left -->
+  <line x1="65" y1="150" x2="75" y2="300" stroke="#FF00FF" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Accent Stripe on Sleeves Right -->
+  <line x1="335" y1="150" x2="325" y2="300" stroke="#FF00FF" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Price Tag -->
+  <rect x="280" y="390" width="90" height="60" fill="#39FF14" opacity="0.9" rx="5"/>
+  <text x="325" y="415" font-family="monospace" font-size="14" text-anchor="middle" fill="#0a0e27" font-weight="bold">$69.99</text>
+
+  <!-- Scanlines -->
+  <line x1="0" y1="80" x2="400" y2="80" stroke="#39FF14" stroke-width="0.5" opacity="0.1"/>
+  <line x1="0" y1="180" x2="400" y2="180" stroke="#39FF14" stroke-width="0.5" opacity="0.1"/>
+  <line x1="0" y1="280" x2="400" y2="280" stroke="#39FF14" stroke-width="0.5" opacity="0.1"/>
+</svg>

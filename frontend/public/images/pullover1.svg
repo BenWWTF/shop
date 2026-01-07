@@ -1,0 +1,72 @@
+<svg width="400" height="500" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e27;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1f3a;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" fill="url(#bgGrad)"/>
+
+  <!-- Pullover Body -->
+  <ellipse cx="200" cy="150" rx="80" ry="100" fill="#2a2f4a" stroke="#FF00FF" stroke-width="2"/>
+
+  <!-- Pullover Sleeves Left -->
+  <ellipse cx="100" cy="180" rx="35" ry="80" fill="#2a2f4a" stroke="#FF00FF" stroke-width="2"/>
+
+  <!-- Pullover Sleeves Right -->
+  <ellipse cx="300" cy="180" rx="35" ry="80" fill="#2a2f4a" stroke="#FF00FF" stroke-width="2"/>
+
+  <!-- Neckline -->
+  <ellipse cx="200" cy="90" rx="45" ry="30" fill="#1a1f3a" stroke="#00FFFF" stroke-width="2"/>
+
+  <!-- Collar Ribbing -->
+  <circle cx="180" cy="85" r="3" fill="#FF00FF" filter="url(#glow)"/>
+  <circle cx="200" cy="80" r="3" fill="#FF00FF" filter="url(#glow)"/>
+  <circle cx="220" cy="85" r="3" fill="#FF00FF" filter="url(#glow)"/>
+
+  <!-- Branding Text on Chest -->
+  <text x="200" y="160" font-family="monospace" font-size="24" font-weight="bold" text-anchor="middle" fill="#00FFFF" filter="url(#glow)">ZURLEGENDE</text>
+
+  <!-- Decorative Lines -->
+  <line x1="120" y1="200" x2="280" y2="200" stroke="#FF00FF" stroke-width="2" opacity="0.6"/>
+  <line x1="130" y1="220" x2="270" y2="220" stroke="#00FFFF" stroke-width="1" opacity="0.4"/>
+
+  <!-- Waistband -->
+  <ellipse cx="200" cy="250" rx="70" ry="15" fill="#FF00FF" opacity="0.3" stroke="#FF00FF" stroke-width="1"/>
+
+  <!-- Cuff Details Left -->
+  <line x1="75" y1="260" x2="75" y2="300" stroke="#00FFFF" stroke-width="2"/>
+  <circle cx="75" cy="310" r="15" fill="none" stroke="#FF00FF" stroke-width="1" opacity="0.5"/>
+
+  <!-- Cuff Details Right -->
+  <line x1="325" y1="260" x2="325" y2="300" stroke="#00FFFF" stroke-width="2"/>
+  <circle cx="325" cy="310" r="15" fill="none" stroke="#FF00FF" stroke-width="1" opacity="0.5"/>
+
+  <!-- Bottom Ribbing -->
+  <line x1="140" y1="240" x2="140" y2="260" stroke="#FF00FF" stroke-width="1" opacity="0.4"/>
+  <line x1="160" y1="240" x2="160" y2="260" stroke="#FF00FF" stroke-width="1" opacity="0.4"/>
+  <line x1="240" y1="240" x2="240" y2="260" stroke="#FF00FF" stroke-width="1" opacity="0.4"/>
+  <line x1="260" y1="240" x2="260" y2="260" stroke="#FF00FF" stroke-width="1" opacity="0.4"/>
+
+  <!-- Glow Effect -->
+  <rect x="120" y="80" width="160" height="200" fill="none" stroke="#FF00FF" stroke-width="1" opacity="0.2" rx="20"/>
+
+  <!-- Price Tag -->
+  <rect x="280" y="350" width="90" height="60" fill="#FF00FF" opacity="0.9" rx="5"/>
+  <text x="325" y="375" font-family="monospace" font-size="14" text-anchor="middle" fill="#0a0e27" font-weight="bold">$49.99</text>
+
+  <!-- Scanline effect -->
+  <line x1="0" y1="0" x2="400" y2="0" stroke="#FF00FF" stroke-width="0.5" opacity="0.1"/>
+  <line x1="0" y1="10" x2="400" y2="10" stroke="#FF00FF" stroke-width="0.5" opacity="0.1"/>
+  <line x1="0" y1="20" x2="400" y2="20" stroke="#FF00FF" stroke-width="0.5" opacity="0.1"/>
+  <line x1="0" y1="30" x2="400" y2="30" stroke="#FF00FF" stroke-width="0.5" opacity="0.1"/>
+</svg>
