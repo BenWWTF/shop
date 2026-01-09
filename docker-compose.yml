@@ -1,0 +1,84 @@
+version: '3.8'
+
+services:
+  # ============================================
+  # PostgreSQL Database
+  # ============================================
+  postgres:
+    image: postgres:15-alpine
+    container_name: shop_postgres
+    environment:
+      POSTGRES_DB: ${DB_NAME:-medusa_shop}
+      POSTGRES_USER: ${DB_USER:-medusa_user}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-medusa_user}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - shop-network
+
+  # ============================================
+  # Medusa Backend (API)
+  # ============================================
+  medusa:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.dev
+    container_name: shop_medusa
+    environment:
+      DATABASE_URL: postgres://${DB_USER:-medusa_user}:${DB_PASSWORD:-postgres}@postgres:5432/${DB_NAME:-medusa_shop}
+      MEDUSA_BACKEND_URL: ${MEDUSA_BACKEND_URL:-http://localhost:9000}
+      JWT_SECRET: ${JWT_SECRET:-jwt_secret_change_me}
+      COOKIE_SECRET: ${COOKIE_SECRET:-cookie_secret_change_me}
+      STRIPE_API_KEY: ${STRIPE_API_KEY}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET}
+      NODE_ENV: ${NODE_ENV:-development}
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - shop-network
+    command: npm run dev
+
+  # ============================================
+  # Next.js Frontend
+  # ============================================
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    container_name: shop_frontend
+    environment:
+      NEXT_PUBLIC_MEDUSA_URL: ${NEXT_PUBLIC_MEDUSA_URL:-http://localhost:9000}
+      NEXT_PUBLIC_STRIPE_KEY: ${NEXT_PUBLIC_STRIPE_KEY}
+      NODE_ENV: ${NODE_ENV:-development}
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+      - /app/.next
+    depends_on:
+      - medusa
+    networks:
+      - shop-network
+    command: npm run dev
+
+networks:
+  shop-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+    driver: local
