@@ -2,9 +2,9 @@
 
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 
-export default function OrderConfirmationPage() {
+function OrderConfirmationContent() {
   const searchParams = useSearchParams();
   const orderId = searchParams.get('orderId');
   const [mounted, setMounted] = useState(false);
@@ -138,5 +138,13 @@ export default function OrderConfirmationPage() {
         </div>
       </footer>
     </div>
+  );
+}
+
+export default function OrderConfirmationPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-dark-bg flex items-center justify-center"><p className="terminal-text">» LOADING...</p></div>}>
+      <OrderConfirmationContent />
+    </Suspense>
   );
 }

@@ -5,7 +5,7 @@ import { useCart } from '@/lib/cart-store';
 import { useEffect, useState } from 'react';
 
 export default function CartPage() {
-  const { id, items, total, subtotal, removeItem, updateQuantity, getItemCount } =
+  const { items, total, subtotal, removeItem, updateQuantity, getItemCount } =
     useCart();
   const [mounted, setMounted] = useState(false);
 

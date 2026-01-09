@@ -2,38 +2,6 @@ import axios, { AxiosInstance } from 'axios';
 
 const API_URL = process.env.NEXT_PUBLIC_MEDUSA_URL || 'http://localhost:9000';
 
-interface MedusaProduct {
-  id: string;
-  title: string;
-  description: string;
-  handle: string;
-  images: any[];
-  variants: any[];
-  options: any[];
-  created_at: string;
-  updated_at: string;
-}
-
-interface Cart {
-  id: string;
-  items: any[];
-  total: number;
-  subtotal: number;
-  tax_total: number;
-  shipping_total: number;
-  discount_total: number;
-}
-
-interface LineItem {
-  id: string;
-  cart_id: string;
-  product_id: string;
-  variant_id: string;
-  quantity: number;
-  title: string;
-  price: number;
-}
-
 class MedusaClient {
   private client: AxiosInstance;
 

@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { cartId, email, shippingAddress, billingAddress } = body;
+    const { cartId, email, shippingAddress } = body;
 
     if (!cartId || !email || !shippingAddress) {
       return NextResponse.json(

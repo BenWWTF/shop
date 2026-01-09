@@ -11,7 +11,7 @@ import StripePaymentForm from '@/components/StripePaymentForm';
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY || '');
 
-type CheckoutStep = 'address' | 'payment' | 'loading';
+type CheckoutStep = 'address' | 'payment';
 
 export default function CheckoutPage() {
   const { id: cartId, items, total, clearCart } = useCart();
@@ -19,6 +19,7 @@ export default function CheckoutPage() {
   const [clientSecret, setClientSecret] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [mounted, setMounted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -69,7 +70,7 @@ export default function CheckoutPage() {
   const handleAddressSubmit = async (formData: CheckoutFormData) => {
     if (!cartId) return;
 
-    setStep('loading');
+    setIsLoading(true);
     setError(null);
 
     try {
@@ -93,10 +94,11 @@ export default function CheckoutPage() {
       const data = await response.json();
       setClientSecret(data.clientSecret);
       setStep('payment');
+      setIsLoading(false);
     } catch (err) {
       const errorMsg = err instanceof Error ? err.message : 'Payment initialization failed';
       setError(errorMsg);
-      setStep('address');
+      setIsLoading(false);
     }
   };
 
@@ -158,7 +160,7 @@ export default function CheckoutPage() {
                 <h2 className="text-2xl font-bold text-neon-pink mb-6">
                   SHIPPING ADDRESS
                 </h2>
-                <CheckoutForm onSubmit={handleAddressSubmit} isLoading={step === 'loading'} />
+                <CheckoutForm onSubmit={handleAddressSubmit} isLoading={isLoading} />
               </div>
             )}
 
@@ -191,7 +193,7 @@ export default function CheckoutPage() {
               </div>
             )}
 
-            {step === 'loading' && (
+            {isLoading && (
               <div className="neon-card text-center py-12">
                 <p className="terminal-text text-2xl animate-pulse">
                   » PROCESSING...
